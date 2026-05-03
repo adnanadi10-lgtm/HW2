@@ -1,0 +1,3 @@
+id is stronger than class
+class is stronger than element
+id > class > element > bigger element

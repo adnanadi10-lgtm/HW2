@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusGuide 2026 - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <h1>Contact Us</h1>
+        <p>Register for events or send us your inquiries</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Events</a></li>
+            <li><a href="data.html">Schedule</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="card.html">Card</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section>
+            <h2 style="color: #e67e22; border-color: #e67e22;">Registration Form</h2>
+
+            <form action="#" method="post" aria-label="Contact form" id="contactForm">
+                <fieldset>
+                    <legend>Your Details</legend>
+                    <div>
+                        <label for="fullname">Full Name (required, min 5 chars):</label>
+                        <input type="text" id="fullname" name="fullname" required placeholder="Adnan Adi">
+                    </div>
+
+                    <div>
+                        <label for="email">University Email (@e-uvt.ro required):</label>
+                        <input type="email" id="email" name="email" required placeholder="adnan@e-uvt.ro">
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone (exactly 10 digits):</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0712345678">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Inquiry Details</legend>
+                    <div>
+                        <label for="subject">Subject (required):</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Please select a subject --</option>
+                            <option value="lab">Lab Question</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="help">General Help</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="message">Message (required):</label>
+                        <textarea id="message" name="message" rows="5" required
+                            placeholder="Tell us more..."></textarea>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>How did you hear about us?</legend>
+                    <div class="subscribe-container">
+                        <input type="radio" id="uni" name="source" value="uni">
+                        <label for="uni">University</label>
+                    </div>
+                    <div class="subscribe-container">
+                        <input type="radio" id="internet" name="source" value="internet">
+                        <label for="internet">Internet</label>
+                    </div>
+                    <div class="subscribe-container">
+                        <input type="radio" id="friend" name="source" value="friend">
+                        <label for="friend">Friend</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+                    <div>
+                        <label for="dob">Date of Birth (must be 18+):</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+
+                    <div>
+                        <label for="age">Age (18–60):</label>
+                        <input type="number" id="age" name="age" min="18" max="60" required>
+                    </div>
+
+                    <div>
+                        <label for="website">Portfolio Website (must start with https://):</label>
+                        <input type="url" id="website" name="website" placeholder="https://yourpage.com" required>
+                    </div>
+
+                    <div>
+                        <label for="fileUpload">Upload ID/Proof (PDF or DOCX, max 2MB):</label>
+                        <input type="file" id="fileUpload" name="fileUpload" accept=".pdf,.docx" required>
+                    </div>
+
+                    <div>
+                        <label for="favColor">Favorite Club Color (required):</label>
+                        <input type="color" id="favColor" name="favColor" value="#4a90e2">
+                    </div>
+                </fieldset>
+
+                <div>
+                    <button type="submit">Submit Registration</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Previous Submissions</h2>
+            <div class="table-container">
+                <table>
+                    <caption>Messages Received (Sample Data)</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Adnan Adi</td>
+                            <td>adnan@e-uvt.ro</td>
+                            <td>Feedback</td>
+                            <td>2026-03-10</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Adnan</td>
+                            <td>adnan@e-uvt.ro</td>
+                            <td>General Help</td>
+                            <td>2026-03-11</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CampusGuide | Created for Web Development Assignment BY ADNAN</p>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+
+</html>
