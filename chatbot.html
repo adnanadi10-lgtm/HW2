@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusGuide 2026 - Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>    
+        <h1>Campus Assistant</h1>
+        <p>Ask me anything about events, clubs, or the campus!</p>
+    </header>
+    
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Events</a></li>
+            <li><a href="data.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="chatbot.html" aria-current="page">Chatbot</a></li>
+            <li><a href="card.html">Card</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <section class="chat-wrapper">
+            <div id="chat-container" class="chat-display">
+                <!-- Messages will be appended here -->
+            </div>
+            <form id="chat-form" class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Type your answer (a, b, etc.)..." required autocomplete="off">
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 CampusGuide | Created for Web Development Assignment BY ADNAN</p>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
