@@ -226,15 +226,20 @@ html.dark-theme .tech-badge.git { background-color: #3b0764; color: #c084fc; }
     animation: highlightRow 2s ease-out;
 }
 
-/* Responsive Table Column Sizing Fix (Prevents column squeezing and word-wrapping bugs) */
+/* Responsive Table Column Sizing Fix */
 .table-container table {
     min-width: 850px;
-    table-layout: fixed; /* Ensures column widths are respected precisely */
+    table-layout: auto; /* Change from fixed to auto */
     width: 100%;
 }
 
-.table-container td {
-    word-break: break-word; /* Ensure text wraps cleanly within the cell boundary */
+/* Ensure headers don't squish and overlap */
+.table-container th {
+    white-space: nowrap; /* Prevents words from breaking awkwardly or wrapping */
+    padding: 10px;       /* Adds comfortable spacing between headers */
 }
 
+.table-container td {
+    word-break: break-word; /* Keeps description cells wrapping safely */
+}
 
