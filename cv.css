@@ -1,0 +1,397 @@
+/* cv.css - CV page specific premium styling */
+
+/* Layout structure */
+.cv-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+    .cv-container {
+        grid-template-columns: 320px 1fr;
+    }
+
+    .cv-sidebar {
+        position: sticky;
+        top: 100px;
+    }
+}
+
+/* Sidebar profile card */
+.cv-sidebar-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.cv-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--primary-color);
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.cv-avatar:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.cv-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.cv-title {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cv-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+
+.cv-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+}
+
+.cv-contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.cv-contact-icon {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.cv-contact-text {
+    word-break: break-all;
+}
+
+.cv-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.cv-btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.65rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.cv-btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+/* Timeline Components */
+.cv-section {
+    margin-bottom: 2.5rem;
+}
+
+.cv-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    margin: 1.5rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -2rem;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 3px solid var(--primary-color);
+    z-index: 1;
+    box-sizing: border-box;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.timeline-item:hover::before {
+    background-color: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.timeline-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    gap: 0.5rem;
+}
+
+.timeline-role {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.timeline-org {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    background: #eef2ff;
+    color: var(--primary-color);
+    padding: 0.2rem 0.75rem;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+html.dark-theme .timeline-date {
+    background: #1e1b4b;
+    color: #a5b4fc;
+}
+
+.timeline-desc {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+/* Skills list details */
+.skills-dashboard {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.skills-filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.skills-filter-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skills-filter-btn:hover, .skills-filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+}
+
+.skill-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* Language Proficiency Bars */
+.language-list {
+    margin-top: 1rem;
+}
+
+.language-item {
+    margin-bottom: 1.25rem;
+}
+
+.language-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.language-name {
+    color: var(--text-color);
+}
+
+.language-level {
+    color: var(--text-light);
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    transition: width 1s ease-out;
+}
+
+/* Print Stylesheet */
+@media print {
+    body {
+        background: white !important;
+        color: black !important;
+        font-size: 11pt !important;
+    }
+    
+    header, nav, footer, .cv-actions, .skills-filter-bar, .theme-toggle-container {
+        display: none !important;
+    }
+    
+    main {
+        margin: 0 !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .cv-container {
+        display: block !important;
+    }
+    
+    .cv-sidebar {
+        margin-bottom: 2rem !important;
+        page-break-after: avoid;
+    }
+    
+    .cv-sidebar-card {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        text-align: left !important;
+    }
+    
+    .cv-avatar {
+        display: none !important;
+    }
+    
+    .cv-contact-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        border: none !important;
+        margin: 1rem 0 !important;
+    }
+    
+    .timeline::before {
+        background: #ccc !important;
+    }
+    
+    .timeline-item::before {
+        border-color: #333 !important;
+        background: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .timeline-date {
+        background: #eee !important;
+        color: #333 !important;
+        border: 1px solid #ccc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .progress-track {
+        background-color: #eee !important;
+        border: 1px solid #ccc !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    .progress-fill {
+        background-color: #666 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusGuide 2026 - Curriculum Vitae</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cv.css">
+    <script src="theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>    
+        <h1>Curriculum Vitae</h1>
+        <p>Professional background, academic timeline, and skill portfolio</p>
+    </header>
+    
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Events</a></li>
+            <li><a href="data.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="card.html">Card</a></li>
+            <li><a href="cv.html" aria-current="page">CV</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li class="theme-toggle-container">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                    <span class="theme-text">Dark</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="cv-container">
+            <!-- Sidebar Profile Card -->
+            <aside class="cv-sidebar" aria-label="Personal Information">
+                <div class="cv-sidebar-card">
+                    <img src="Windows.jpg" alt="Adnan Adi Profile Photo" class="cv-avatar">
+                    <h2 class="cv-name">Adnan Adi</h2>
+                    <p class="cv-title">Web Developer & CS Student</p>
+                    
+                    <ul class="cv-contact-list">
+                        <li class="cv-contact-item">
+                            <span class="cv-contact-icon" aria-hidden="true">✉️</span>
+                            <span class="cv-contact-text">adnan.adi@e-uvt.ro</span>
+                        </li>
+                        <li class="cv-contact-item">
+                            <span class="cv-contact-icon" aria-hidden="true">📞</span>
+                            <span class="cv-contact-text">+40 712 345 678</span>
+                        </li>
+                        <li class="cv-contact-item">
+                            <span class="cv-contact-icon" aria-hidden="true">📍</span>
+                            <span class="cv-contact-text">Timișoara, Romania</span>
+                        </li>
+                        <li class="cv-contact-item">
+                            <span class="cv-contact-icon" aria-hidden="true">🌐</span>
+                            <a href="https://github.com/AdnanAdi" class="cv-contact-text" style="color: inherit;">github.com/AdnanAdi</a>
+                        </li>
+                    </ul>
+                    
+                    <div class="cv-actions">
+                        <a href="portfolio.html" class="cv-btn-secondary" style="text-align: center;">View Portfolio Projects</a>
+                        <button id="print-cv-btn" class="cv-btn-secondary">Print Resume / PDF</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- CV Timeline and Sections -->
+            <div class="cv-main-content">
+                <!-- Profile Section -->
+                <section aria-labelledby="profile-heading">
+                    <h2 id="profile-heading">Professional Summary</h2>
+                    <p>Highly motivated Computer Science student at West University of Timișoara with a passion for web technologies and responsive design. Skilled in semantic HTML5, accessible CSS3 layouts (Grid/Flexbox), and dynamic vanilla JavaScript solutions. Dedicated to engineering applications with 100% compliance to accessibility guidelines (WCAG) and high performance indicators.</p>
+                </section>
+
+                <!-- Education Section -->
+                <section aria-labelledby="education-heading">
+                    <h2 id="education-heading">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">B.Sc. in Computer Science</h3>
+                                <span class="timeline-date">2024 - Present</span>
+                            </div>
+                            <div class="timeline-org">West University of Timișoara</div>
+                            <p class="timeline-desc">Specializing in Software Development, Database Management, and Web Technologies. Working on complex campus guide architectures, responsive design interfaces, and client-side UI scripting frameworks.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">High School Diploma (Mathematics & Computer Science)</h3>
+                                <span class="timeline-date">2020 - 2024</span>
+                            </div>
+                            <div class="timeline-org">National College of Computer Science</div>
+                            <p class="timeline-desc">Acquired core scientific thinking, foundational algorithm designs (C/C++), and introductory database structures.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section aria-labelledby="experience-heading">
+                    <h2 id="experience-heading">Work Experience & Projects</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">Frontend Web Developer (Academic Project)</h3>
+                                <span class="timeline-date">Spring 2026</span>
+                            </div>
+                            <div class="timeline-org">CampusGuide Portal Development</div>
+                            <p class="timeline-desc">Engineered the main portal site using purely native technologies. Integrated a responsive weekly timetable, complex accessible schedules, and a validation dashboard with high user engagement metrics. Ensured strict compliance with Lighthouse SEO and Accessibility criteria.</p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-header">
+                                <h3 class="timeline-role">Junior Developer & Chatbot Integrator</h3>
+                                <span class="timeline-date">Winter 2025</span>
+                            </div>
+                            <div class="timeline-org">Virtual Campus Agent Initiative</div>
+                            <p class="timeline-desc">Developed a responsive client-side AI Chatbot interface using vanilla CSS glassmorphism, responsive chat bubbles, and dynamic messaging scripts. Integrated responsive triggers for keyboard-friendly interaction.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skills Dashboard (Interactive) -->
+                <section aria-labelledby="skills-heading">
+                    <h2 id="skills-heading">Technical Skills Dashboard</h2>
+                    <div class="skills-dashboard">
+                        <div class="skills-filter-bar" role="tablist" aria-label="Skills Categories">
+                            <button class="skills-filter-btn active" role="tab" aria-selected="true" data-filter="all">All Skills</button>
+                            <button class="skills-filter-btn" role="tab" aria-selected="false" data-filter="frontend">Frontend</button>
+                            <button class="skills-filter-btn" role="tab" aria-selected="false" data-filter="backend">Backend</button>
+                            <button class="skills-filter-btn" role="tab" aria-selected="false" data-filter="design">Design & A11y</button>
+                        </div>
+                        
+                        <div class="skills-grid" aria-live="polite">
+                            <div class="skill-card" data-category="frontend">HTML5</div>
+                            <div class="skill-card" data-category="frontend">CSS3</div>
+                            <div class="skill-card" data-category="frontend">JavaScript</div>
+                            <div class="skill-card" data-category="frontend">Grid / Flex</div>
+                            <div class="skill-card" data-category="backend">Node.js</div>
+                            <div class="skill-card" data-category="backend">Git / GitHub</div>
+                            <div class="skill-card" data-category="backend">SQL</div>
+                            <div class="skill-card" data-category="backend">Python</div>
+                            <div class="skill-card" data-category="design">WCAG 2.2</div>
+                            <div class="skill-card" data-category="design">Responsive UI</div>
+                            <div class="skill-card" data-category="design">SEO Design</div>
+                            <div class="skill-card" data-category="design">A11y Scoring</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Languages Section -->
+                <section aria-labelledby="languages-heading">
+                    <h2 id="languages-heading">Language Proficiency</h2>
+                    <div class="language-list">
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span class="language-name">Romanian</span>
+                                <span class="language-level">Native / Bilingual</span>
+                            </div>
+                            <div class="progress-track" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Romanian Proficiency">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span class="language-name">English</span>
+                                <span class="language-level">Professional (C1 / TOEFL)</span>
+                            </div>
+                            <div class="progress-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="English Proficiency">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="language-item">
+                            <div class="language-info">
+                                <span class="language-name">Arabic</span>
+                                <span class="language-level">Professional Proficiency</span>
+                            </div>
+                            <div class="progress-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Arabic Proficiency">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CampusGuide | Created for Web Development Assignment BY ADNAN</p>
+    </footer>
+
+    <script src="cv.js"></script>
+</body>
+</html>

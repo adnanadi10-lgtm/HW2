@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusGuide 2026 - Portfolio Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <script src="theme.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header>    
+        <h1>Project Portfolio</h1>
+        <p>Interactive web developer project log and responsive data panel</p>
+    </header>
+    
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="content.html">Events</a></li>
+            <li><a href="data.html">Schedule</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="overview.html">Overview</a></li>
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="card.html">Card</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+            <li class="theme-toggle-container">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                    <span class="theme-text">Dark</span>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main-content">
+        <div class="portfolio-grid">
+            <!-- Left Column: Add Project Form (Main Element) -->
+            <section class="portfolio-form-container" aria-labelledby="form-heading">
+                <h2 id="form-heading">Log a Personal Project</h2>
+                
+                <form id="project-form" action="#" method="POST" novalidate aria-label="Submit project form">
+                    <fieldset>
+                        <legend>Project Details & Scope</legend>
+                        
+                        <!-- 1. Text Input: Project Name -->
+                        <div class="form-group">
+                            <label for="project-name">Project Name (Letters, numbers, spaces, dashes):</label>
+                            <input type="text" id="project-name" name="name" required 
+                                   placeholder="e.g. Campus Timetable App" 
+                                   aria-describedby="name-error">
+                            <span class="error-message" id="name-error" aria-live="assertive"></span>
+                        </div>
+
+                        <!-- 2. Textarea: Description -->
+                        <div class="form-group">
+                            <label for="project-desc">Project Description (Min 10 characters):</label>
+                            <textarea id="project-desc" name="description" rows="4" required 
+                                      placeholder="Provide a detailed, readable description of the project goals..."
+                                      aria-describedby="desc-error"></textarea>
+                            <span class="error-message" id="desc-error" aria-live="assertive"></span>
+                        </div>
+
+                        <!-- 3. URL Input: Project URL -->
+                        <div class="form-group">
+                            <label for="project-url">Project Site URL (Must start with http:// or https://):</label>
+                            <input type="url" id="project-url" name="url" required 
+                                   placeholder="https://example.com" 
+                                   aria-describedby="url-error">
+                            <span class="error-message" id="url-error" aria-live="assertive"></span>
+                        </div>
+
+                        <!-- 4. Select Dropdown: Technology -->
+                        <div class="form-group">
+                            <label for="project-tech">Primary Technology:</label>
+                            <select id="project-tech" name="tech" required aria-describedby="tech-error">
+                                <option value="">-- Choose primary technology --</option>
+                                <option value="html">HTML5</option>
+                                <option value="css">CSS3</option>
+                                <option value="javascript">JavaScript</option>
+                                <option value="react">React Framework</option>
+                                <option value="python">Python</option>
+                                <option value="java">Java</option>
+                                <option value="git">Git / GitHub</option>
+                            </select>
+                            <span class="error-message" id="tech-error" aria-live="assertive"></span>
+                        </div>
+
+                        <!-- 5. Date Input: Completion Date -->
+                        <div class="form-group">
+                            <label for="project-date">Completion Date (Cannot be in the future):</label>
+                            <input type="date" id="project-date" name="date" required 
+                                   aria-describedby="date-error">
+                            <span class="error-message" id="date-error" aria-live="assertive"></span>
+                        </div>
+
+                        <!-- 6. File Input: Thumbnail Image -->
+                        <div class="form-group">
+                            <label for="project-image">Project Thumbnail Image (Max 2MB):</label>
+                            <input type="file" id="project-image" name="image" accept="image/*" required 
+                                   aria-describedby="image-error">
+                            <span class="error-message" id="image-error" aria-live="assertive"></span>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="reset" class="btn-reset">Reset Form</button>
+                        <button type="submit" class="btn-submit">Submit Project</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Right Column: Projects Showcase Table -->
+            <section class="portfolio-table-card" aria-labelledby="table-heading">
+                <div class="showcase-header">
+                    <h2 id="table-heading" class="showcase-title">Submitted Projects Catalog</h2>
+                    <div class="project-stats-card" aria-live="polite">
+                        Total Projects: <span id="total-projects-count">0</span>
+                    </div>
+                </div>
+
+                <div class="table-container" tabindex="0" aria-label="Projects table container (scrollable)">
+                    <table>
+                        <caption>Responsive Catalog of Submitted Portfolio Projects</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 10%;">Thumbnail</th>
+                                <th scope="col" style="width: 20%;">Project Name</th>
+                                <th scope="col" style="width: 40%;">Description</th>
+                                <th scope="col" style="width: 10%;">Technology</th>
+                                <th scope="col" style="width: 10%;">Project URL</th>
+                                <th scope="col" style="width: 10%;">Completed Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="projects-table-body">
+                            <!-- Populated dynamically via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CampusGuide | Created for Web Development Assignment BY ADNAN</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>

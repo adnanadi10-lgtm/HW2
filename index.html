@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CampusGuide 2026 - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -43,6 +44,14 @@
             <li><a href="overview.html">Overview</a></li>
             <li><a href="chatbot.html">Chatbot</a></li>
             <li><a href="card.html">Card</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li class="theme-toggle-container">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                    <span class="theme-text">Dark</span>
+                </button>
+            </li>
         </ul>
     </nav>
 
@@ -52,26 +61,46 @@
             <p>Discover opportunities, meet new friends, and make memories.</p>
         </div>
 
-        <section>
-            <h2>Featured Events</h2>
-            <article>
-                <h3>Annual Tech Symposium</h3>
-                <p>Join us for a day of innovation, workshops, and networking with industry leaders.</p>
-            </article>
-            <article>
-                <h3>Culture Fest 2026</h3>
-                <p>Celebrate diversity with music, dance, and food from around the world.</p>
-            </article>
+        <section aria-labelledby="featured-events-heading">
+            <h2 id="featured-events-heading">Featured Events</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                <article class="info-card" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); margin-bottom: 0; border-bottom: none;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Annual Tech Symposium</h3>
+                    <p>Join us for a day of innovation, workshops, and networking with industry leaders.</p>
+                    
+                    <!-- Live Countdown Widget (Visual Enhancement) -->
+                    <div class="countdown-card" style="background: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); text-align: center; margin-top: 1rem;">
+                        <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Live Countdown</span>
+                        <div id="tech-symposium-countdown" style="display: flex; justify-content: center; gap: 0.75rem; font-size: 1.25rem; font-weight: 700; color: var(--text-color);">
+                            <div><span id="cd-days">00</span><div style="font-size: 0.65rem; font-weight: 500; color: var(--text-light);">Days</div></div>
+                            <div>:</div>
+                            <div><span id="cd-hours">00</span><div style="font-size: 0.65rem; font-weight: 500; color: var(--text-light);">Hrs</div></div>
+                            <div>:</div>
+                            <div><span id="cd-mins">00</span><div style="font-size: 0.65rem; font-weight: 500; color: var(--text-light);">Mins</div></div>
+                            <div>:</div>
+                            <div><span id="cd-secs">00</span><div style="font-size: 0.65rem; font-weight: 500; color: var(--text-light);">Secs</div></div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="info-card" style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); margin-bottom: 0; border-bottom: none;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Culture Fest 2026</h3>
+                    <p>Celebrate diversity with music, dance, and food from around the world. Connect with local communities and discover international heritages.</p>
+                    <p style="margin-top: 0.5rem;"><strong>Location:</strong> Main Campus Green</p>
+                </article>
+            </div>
         </section>
 
-        <section>
-            <h2>Latest Updates</h2>
-            <p>Stay tuned for registration deadlines and new club announcements.</p>
+        <section aria-labelledby="updates-heading">
+            <h2 id="updates-heading">Latest Updates</h2>
+            <p>Stay tuned for registration deadlines, new club announcements, and timetables. Visit the <a href="portfolio.html" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Portfolio page</a> to log your software development milestones!</p>
         </section>
     </main>
     
     <footer>
         <p>&copy; 2026 CampusGuide | Created for Web Development Assignment BY ADNAN</p>
     </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>

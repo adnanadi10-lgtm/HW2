@@ -1,0 +1,240 @@
+/* portfolio.css - Portfolio and project showcase specific styles */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .portfolio-grid {
+        grid-template-columns: 420px 1fr;
+    }
+    
+    .portfolio-form-container {
+        position: sticky;
+        top: 100px;
+    }
+}
+
+/* Form Styling */
+.portfolio-form-container {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+.portfolio-form-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 0.75rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 0; /* Override global style margin */
+}
+
+/* File Upload input custom styling */
+.form-group input[type="file"] {
+    padding: 0.5rem;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions button {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-reset {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-light);
+}
+
+.btn-reset:hover {
+    background-color: #f1f5f9;
+    color: var(--text-color);
+    border-color: var(--text-color);
+    box-shadow: none;
+    transform: translateY(-1px);
+}
+
+html.dark-theme .btn-reset:hover {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border-color: #94a3b8;
+}
+
+/* Showcase Section and Stats Card */
+.showcase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.showcase-title {
+    font-size: 1.75rem;
+    color: var(--text-color);
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.project-stats-card {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+.portfolio-table-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+
+/* Projects Table styling */
+.project-thumbnail {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.project-thumbnail:hover {
+    transform: scale(1.1);
+}
+
+.tech-badge {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+/* Custom technology badge colors for visual WOW factor */
+.tech-badge.html { background-color: #ffedd5; color: #ea580c; }
+.tech-badge.css { background-color: #e0f2fe; color: #0284c7; }
+.tech-badge.javascript { background-color: #fef9c3; color: #ca8a04; }
+.tech-badge.react { background-color: #ecfeff; color: #0891b2; }
+.tech-badge.python { background-color: #dcfce7; color: #16a34a; }
+.tech-badge.java { background-color: #fee2e2; color: #dc2626; }
+.tech-badge.git { background-color: #f3e8ff; color: #9333ea; }
+
+html.dark-theme .tech-badge {
+    background-color: #334155;
+    color: #cbd5e1;
+}
+
+html.dark-theme .tech-badge.html { background-color: #431407; color: #f97316; }
+html.dark-theme .tech-badge.css { background-color: #0c4a6e; color: #38bdf8; }
+html.dark-theme .tech-badge.javascript { background-color: #422006; color: #facc15; }
+html.dark-theme .tech-badge.react { background-color: #083344; color: #22d3ee; }
+html.dark-theme .tech-badge.python { background-color: #064e3b; color: #4ade80; }
+html.dark-theme .tech-badge.java { background-color: #450a0a; color: #f87171; }
+html.dark-theme .tech-badge.git { background-color: #3b0764; color: #c084fc; }
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+.table-fallback-row {
+    text-align: center;
+    padding: 3rem !important;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* CSS micro-animations for newly added rows */
+@keyframes highlightRow {
+    0% { background-color: rgba(74, 144, 226, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.newly-added-row {
+    animation: highlightRow 2s ease-out;
+}
+
+/* Responsive Table Column Sizing Fix (Prevents column squeezing and word-wrapping bugs) */
+.table-container table {
+    min-width: 850px;
+    table-layout: fixed; /* Ensures column widths are respected precisely */
+    width: 100%;
+}
+
+.table-container td {
+    word-break: break-word; /* Ensure text wraps cleanly within the cell boundary */
+}
+
+

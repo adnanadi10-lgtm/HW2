@@ -81,3 +81,19 @@
 .link-btn.github:hover {
     background: #000;
 }
+
+/* Dark Mode Overrides */
+html.dark-theme .card {
+    background: rgba(30, 41, 59, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+html.dark-theme .name {
+    color: #f8fafc;
+}
+
+html.dark-theme .year {
+    color: #94a3b8;
+}
+

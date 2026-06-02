@@ -87,3 +87,25 @@
     text-transform: uppercase;
     text-align: right;
 }
+
+/* Dark Mode Overrides */
+html.dark-theme .chat-wrapper {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+html.dark-theme .chat-display {
+    background: var(--bg-color);
+}
+
+html.dark-theme .bot-message {
+    background: var(--card-bg);
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+html.dark-theme .chat-input-area {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+

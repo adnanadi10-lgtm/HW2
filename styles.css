@@ -12,6 +12,21 @@
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --radius: 12px;
     --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --transition-speed: 0.3s;
+    --heading-color: var(--header-bg);
+}
+
+/* Dark Theme Variables */
+html.dark-theme {
+    --bg-color: #0f172a;        /* Slate 900 */
+    --card-bg: #1e293b;         /* Slate 800 */
+    --text-color: #f8fafc;      /* Slate 50 */
+    --text-light: #94a3b8;      /* Slate 400 */
+    --header-bg: #020617;       /* Slate 955 */
+    --nav-bg: #0f172a;          /* Slate 900 */
+    --border-color: #334155;    /* Slate 700 */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --heading-color: var(--text-color);
 }
 
 * {
@@ -57,6 +72,19 @@ header h1 {
     margin-bottom: 0.5rem;
 }
 
+/* Responsive Header Font Size */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Ensure navigation does not overflow */
+nav ul {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 header p {
     color: var(--text-light);
     font-weight: 300;
@@ -79,19 +107,29 @@ nav ul {
     margin: 0 auto;
 }
 
-nav a {
-    color: #f1f5f9;
-    text-decoration: none;
-    padding: 1rem 1.5rem;
-    display: block;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
+    nav a {
+        color: #f1f5f9;
+        text-decoration: none;
+        padding: 0.5rem 1rem; /* reduced padding for mobile */
+        display: block;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
 
-nav a:hover {
-    background-color: var(--nav-bg);
-    color: var(--primary-color);
-}
+    nav {
+        overflow-x: hidden;
+    }
+    
+    .theme-toggle-btn {
+        color: var(--text-color);
+        border-color: var(--primary-color);
+    }
+    
+    html.dark-theme .theme-toggle-btn {
+        background: var(--card-bg);
+        color: var(--text-color);
+    }
+
 
 nav a[aria-current="page"] {
     border-bottom: 3px solid var(--primary-color);
@@ -101,7 +139,8 @@ nav a[aria-current="page"] {
 /* Layout */
 main {
     margin: 2rem auto;
-    max-width: 1000px;
+    max-width: 100%;
+    width: 100%;
     padding: 0 1rem;
 }
 
@@ -117,7 +156,7 @@ section {
 h2 {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    color: var(--header-bg);
+    color: var(--heading-color);
     border-left: 5px solid var(--primary-color);
     padding-left: 1rem;
 }
@@ -140,6 +179,7 @@ article h3 {
 /* Tables */
 .table-container {
     overflow-x: auto;
+    width: 100%;
     margin-top: 1rem;
 }
 
@@ -220,7 +260,9 @@ input, select, textarea {
     border-radius: 8px;
     font-family: inherit;
     font-size: 1rem;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 input:focus, select:focus, textarea:focus {
@@ -281,3 +323,95 @@ footer p {
         padding: 1.5rem;
     }
 }
+
+/* Focus Indicator Styles (Accessibility) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--primary-color) !important;
+    outline-offset: 3px !important;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: #f1f5f9;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: auto;
+    margin: 0.5rem 0;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.4);
+    transform: none;
+}
+
+html.dark-theme th {
+    background-color: #020617;
+}
+
+html.dark-theme tr:nth-child(even) {
+    background-color: #1e293b;
+}
+
+html.dark-theme tr:hover {
+    background-color: #334155;
+}
+
+html.dark-theme caption {
+    background: #0f172a;
+    color: var(--text-color);
+}
+
+/* Form Validation Helper Classes */
+.error-message {
+    color: #f43f5e;
+    font-size: 0.85rem;
+    margin-top: -0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    display: none; /* Hidden by default */
+}
+
+.error-message.visible {
+    display: block;
+}
+
+.input-error {
+    border-color: #f43f5e !important;
+    background-color: #fff1f2;
+}
+
+html.dark-theme .input-error {
+    background-color: #4c0519;
+}
+
+.input-success {
+    border-color: #10b981 !important;
+}
+
+/* Theme Switch Transition */
+body, section, header, nav, footer, a, button, input, select, textarea, th, td, tr, caption, .info-card, .profile-summary {
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, border-color var(--transition-speed) ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
